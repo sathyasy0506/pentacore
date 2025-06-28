@@ -2,19 +2,65 @@ import React from "react";
 import { Box, Typography, Button, GlobalStyles } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import bannerImage from "../assets/images/futuristic-dubai-landscape.jpg";
-import handshakeImage from "../assets/images/handshake.jpg"; // Make sure this image exists
-import coreValuesImage from "../assets/images/core-values.jpg"; // Replace with actual image path
+import handshakeImage from "../assets/images/handshake.jpg";
+import coreValuesImage from "../assets/images/core-values.jpg";
 
 import quintechImage from "../assets/images/1.jpg";
 import cincobitImage from "../assets/images/2.jpg";
 import ventaImage from "../assets/images/3.jpg";
 import strategicImage from "../assets/images/4.jpg";
 
+import group4 from "../assets/Group4.svg";
+import group5 from "../assets/Group5.svg";
+import group6 from "../assets/Group6.svg";
+import group7 from "../assets/Group7.svg";
+import group8 from "../assets/Group8.svg";
+import group9 from "../assets/Group9.svg";
+
+import idea from "../assets/Idea.svg";
+import Targetxs from "../assets/Targetxs.svg";
+
 const sectors = [
   { title: "QUINTECH", image: quintechImage },
   { title: "CINCOBIT TECHNOLOGY", image: cincobitImage },
   { title: "VENTA DISTRIBUTION", image: ventaImage },
   { title: "OTHER STRATEGIC INVESTMENTS", image: strategicImage },
+];
+
+const leftValues = [
+  {
+    title: "Integrity and Transparency",
+    desc: "Building trust through honest and open practices.",
+    Icon: group4,
+  },
+  {
+    title: "Excellence in Governance",
+    desc: "Upholding world-class standards of oversight and accountability.",
+    Icon: group5,
+  },
+  {
+    title: "Strategic Growth",
+    desc: "Pursuing scalable, long-term investments that deliver measurable value.",
+    Icon: group6,
+  },
+];
+
+const rightValues = [
+  {
+    title: "Commitment to Sustainability",
+    desc: "Investing responsibly for a resilient, environmentally conscious future.",
+    Icon: group7,
+  },
+  {
+    title: "Empowerment & Collaboration",
+    desc: "Fostering synergy and growth across our subsidiaries and teams.",
+    Icon: group8,
+  },
+  {
+    title: "Performance with Purpose",
+    desc: "Measuring success by both financial results and positive societal impact.",
+    Icon: group9,
+  },
 ];
 
 export default function Home() {
@@ -33,20 +79,21 @@ export default function Home() {
             padding: 0,
             height: "100%",
             overflowX: "hidden",
+            fontFamily: "'Montserrat', sans-serif",
           },
           "#root": {
             height: "100%",
           },
           "*": {
             boxSizing: "border-box",
-            fontFamily: "sans-serif",
+            fontFamily: "'Montserrat', sans-serif !important",
           },
         }}
       />
 
-      {/* Banner Section */}
       <Box
         sx={{
+          position: "relative",
           height: "100vh",
           width: "100%",
           backgroundImage: `url(${bannerImage})`,
@@ -56,16 +103,28 @@ export default function Home() {
           alignItems: "center",
           justifyContent: "flex-start",
           px: { xs: 3, md: 10 },
+          zIndex: 1,
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.15)", // Adjust the opacity as needed
+            zIndex: -1,
+          },
         }}
       >
-        <Box sx={{ maxWidth: "650px" }}>
+        <Box sx={{ maxWidth: "100%", zIndex: 2 }}>
           <Typography
             variant="h3"
             sx={{
               color: "#ffffff",
-              fontWeight: 300,
-              fontSize: { xs: "2rem", md: "3.2rem" },
+              fontWeight: 600,
+              fontSize: { xs: "2rem", md: "58px" },
               lineHeight: 1.35,
+              fontFamily: "'Montserrat', sans-serif",
             }}
           >
             Strategic Investments. Sustainable Growth. Innovation-led Future.
@@ -77,16 +136,16 @@ export default function Home() {
               mt: 4,
               borderRadius: "999px",
               textTransform: "none",
-              px: 4,
-              py: 1.5,
               fontSize: "15px",
-              fontWeight: 400,
-              backgroundColor: "#ffffff",
+              fontWeight: 500,
+              backgroundColor: "rgba(255, 255, 255, 0.89)", // translucent white
               color: "#0F1F44",
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-              "&:hover": {
-                backgroundColor: "#f1f1f1",
-              },
+              backdropFilter: "blur(8px)", // blurry background
+              WebkitBackdropFilter: "blur(8px)", // for Safari
+              border: "1px solid rgba(255, 255, 255, 0.3)", // optional border to enhance glassy look
+
+              fontFamily: "'Montserrat', sans-serif",
             }}
             endIcon={
               <Box
@@ -117,7 +176,7 @@ export default function Home() {
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
           backgroundColor: "#fff",
-          minHeight: { md: "600px" }, // Adjust to control the full section height
+          minHeight: { md: "600px" },
         }}
       >
         {/* Left Text */}
@@ -134,10 +193,11 @@ export default function Home() {
             variant="h4"
             sx={{
               color: "#0F1F44",
-              fontWeight: 700,
+              fontWeight: 600,
               mb: 3,
               fontSize: { xs: "1.8rem", md: "2.2rem" },
               lineHeight: 1.4,
+              fontFamily: "'Montserrat', sans-serif",
             }}
           >
             Pentacore Holdings is a DIFC-based investment holding company
@@ -153,6 +213,7 @@ export default function Home() {
               fontSize: "16px",
               lineHeight: 1.75,
               fontWeight: 400,
+              fontFamily: "'Montserrat', sans-serif",
             }}
           >
             We specialize in acquiring, managing, and cultivating a diverse
@@ -230,6 +291,7 @@ export default function Home() {
             backgroundColor: "#F7F4E8",
             color: "#9B8C5D",
             fontWeight: 500,
+            fontFamily: "'Montserrat', sans-serif",
           }}
         >
           Why us
@@ -243,6 +305,7 @@ export default function Home() {
             fontSize: { xs: "2rem", md: "2.5rem" },
             color: "#0F1F44",
             mb: { xs: 6, md: 10 },
+            fontFamily: "'Montserrat', sans-serif",
           }}
         >
           Our Core Values
@@ -262,30 +325,15 @@ export default function Home() {
           <Box
             sx={{ flex: 1, display: "flex", flexDirection: "column", gap: 6 }}
           >
-            {[
-              {
-                title: "Integrity and Transparency",
-                desc: "Building trust through honest and open practices.",
-              },
-              {
-                title: "Excellence in Governance",
-                desc: "Upholding world-class standards of oversight and accountability.",
-              },
-              {
-                title: "Strategic Growth",
-                desc: "Pursuing scalable, long-term investments that deliver measurable value.",
-              },
-            ].map((item, idx) => (
+            {leftValues.map((item, idx) => (
               <Box key={idx} sx={{ textAlign: "left" }}>
                 <Box
+                  component="img"
+                  src={item.Icon}
+                  alt=""
                   sx={{
                     width: 40,
                     height: 40,
-                    backgroundColor: "#C2A84E",
-                    borderRadius: "50%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
                     mb: 2,
                   }}
                 />
@@ -295,11 +343,18 @@ export default function Home() {
                     fontSize: "16px",
                     color: "#0F1F44",
                     mb: 0.5,
+                    fontFamily: "'Montserrat', sans-serif",
                   }}
                 >
                   {item.title}
                 </Typography>
-                <Typography sx={{ color: "#555", fontSize: "14px" }}>
+                <Typography
+                  sx={{
+                    color: "#555",
+                    fontSize: "14px",
+                    fontFamily: "'Montserrat', sans-serif",
+                  }}
+                >
                   {item.desc}
                 </Typography>
               </Box>
@@ -334,30 +389,15 @@ export default function Home() {
           <Box
             sx={{ flex: 1, display: "flex", flexDirection: "column", gap: 6 }}
           >
-            {[
-              {
-                title: "Commitment to Sustainability",
-                desc: "Investing responsibly for a resilient, environmentally conscious future.",
-              },
-              {
-                title: "Empowerment & Collaboration",
-                desc: "Fostering synergy and growth across our subsidiaries and teams.",
-              },
-              {
-                title: "Performance with Purpose",
-                desc: "Measuring success by both financial results and positive societal impact.",
-              },
-            ].map((item, idx) => (
+            {rightValues.map((item, idx) => (
               <Box key={idx} sx={{ textAlign: "left" }}>
                 <Box
+                  component="img"
+                  src={item.Icon}
+                  alt=""
                   sx={{
                     width: 40,
                     height: 40,
-                    backgroundColor: "#C2A84E",
-                    borderRadius: "50%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
                     mb: 2,
                   }}
                 />
@@ -367,11 +407,18 @@ export default function Home() {
                     fontSize: "16px",
                     color: "#0F1F44",
                     mb: 0.5,
+                    fontFamily: "'Montserrat', sans-serif",
                   }}
                 >
                   {item.title}
                 </Typography>
-                <Typography sx={{ color: "#555", fontSize: "14px" }}>
+                <Typography
+                  sx={{
+                    color: "#555",
+                    fontSize: "14px",
+                    fontFamily: "'Montserrat', sans-serif",
+                  }}
+                >
                   {item.desc}
                 </Typography>
               </Box>
@@ -403,6 +450,7 @@ export default function Home() {
               backgroundColor: "#F7F4E8",
               color: "#9B8C5D",
               fontWeight: 500,
+              fontFamily: "'Montserrat', sans-serif",
             }}
           >
             Our work
@@ -415,6 +463,7 @@ export default function Home() {
               fontSize: { xs: "2rem", md: "2.4rem" },
               color: "#0F1F44",
               mb: 2,
+              fontFamily: "'Montserrat', sans-serif",
             }}
           >
             Our Philosophy
@@ -426,14 +475,15 @@ export default function Home() {
               color: "#555",
               lineHeight: 1.75,
               mb: 4,
+              fontFamily: "'Montserrat', sans-serif",
             }}
           >
-            We are guided by our founder’s simple yet highly effective
+            We are guided by our founder's simple yet highly effective
             philosophy of satisfying and exceeding the expectations of our
             customers, both small or big, through service excellence, honesty,
             integrity, and social awareness. This principle has become ingrained
             in all aspects of the business and is truly responsible for the
-            group’s unrivalled success.
+            group's unrivalled success.
           </Typography>
 
           <Button
@@ -450,6 +500,7 @@ export default function Home() {
               "&:hover": {
                 backgroundColor: "#162750",
               },
+              fontFamily: "'Montserrat', sans-serif",
             }}
             endIcon={
               <Box
@@ -514,7 +565,7 @@ export default function Home() {
             >
               <Box
                 component="img"
-                src="/icons/target-icon.svg" // Replace with actual path
+                src={idea}
                 alt="Vision Icon"
                 sx={{ width: 28, height: 28 }}
               />
@@ -527,6 +578,7 @@ export default function Home() {
                 mt: 6,
                 mb: 4,
                 lineHeight: 1.6,
+                fontFamily: "'Montserrat', sans-serif",
               }}
             >
               To be the leading investment holding company in the region, known
@@ -541,7 +593,13 @@ export default function Home() {
                 py: 2,
               }}
             >
-              <Typography sx={{ fontSize: "14px", fontWeight: 500 }}>
+              <Typography
+                sx={{
+                  fontSize: "14px",
+                  fontWeight: 500,
+                  fontFamily: "'Montserrat', sans-serif",
+                }}
+              >
                 OUR VISION
               </Typography>
             </Box>
@@ -581,7 +639,7 @@ export default function Home() {
             >
               <Box
                 component="img"
-                src="/icons/lightbulb-icon.svg" // Replace with actual path
+                src={Targetxs}
                 alt="Mission Icon"
                 sx={{ width: 28, height: 28 }}
               />
@@ -594,6 +652,7 @@ export default function Home() {
                 mt: 6,
                 mb: 4,
                 lineHeight: 1.6,
+                fontFamily: "'Montserrat', sans-serif",
               }}
             >
               To create long-term value for stakeholders through prudent
@@ -609,7 +668,13 @@ export default function Home() {
                 py: 2,
               }}
             >
-              <Typography sx={{ fontSize: "14px", fontWeight: 500 }}>
+              <Typography
+                sx={{
+                  fontSize: "14px",
+                  fontWeight: 500,
+                  fontFamily: "'Montserrat', sans-serif",
+                }}
+              >
                 OUR MISSION
               </Typography>
             </Box>
@@ -638,6 +703,7 @@ export default function Home() {
             color: "#D1B95F",
             fontWeight: 500,
             textTransform: "uppercase",
+            fontFamily: "'Montserrat', sans-serif",
           }}
         >
           Our Work
@@ -651,6 +717,7 @@ export default function Home() {
             fontSize: { xs: "2rem", md: "2.8rem" },
             color: "#ffffff",
             mb: { xs: 6, md: 10 },
+            fontFamily: "'Montserrat', sans-serif",
           }}
         >
           BUSINESS SECTORS
@@ -722,6 +789,7 @@ export default function Home() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  fontFamily: "'Montserrat', sans-serif",
                 }}
               >
                 {sector.title}
