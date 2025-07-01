@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import heroImage from "../assets/hero.jpg";
-import handShake from "../assets/handShake.jpg";
+import handShake from "../assets/hand.jpg";
 import play from "../assets/play.jpg";
 import robo from "../assets/robo.jpg";
 import lock from "../assets/lock.jpg";
