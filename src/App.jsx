@@ -8,11 +8,13 @@ import Contact from "./components/Contact";
 import Portfolio from "./components/Portfolio";
 import Footer from "./components/Footer";
 import "./index.css";
+import CustomCursor from "./components/CustomCursor";
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen ">
+      <div className="min-h-screen">
+        <CustomCursor /> {/* 👈 Render it here */}
         <Header />
         <div className="pt-16">
           <Routes>
