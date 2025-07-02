@@ -44,8 +44,8 @@ const Business = () => {
 
         {/* Right Content Section */}
         <div className="w-full lg:flex-1 lg:min-w-[300px] px-4 md:px-6 lg:pl-8 lg:pr-0 pt-6 md:pt-8 lg:pt-0 flex flex-col justify-center">
-          <h3 className="text-2xl sm:text-3xl md:text-[34px] font-bold text-[#0F1F44] mb-3 md:mb-4">
-            QuinTech
+          <h3 className="text-2xl sm:text-3xl md:text-[34px] font-bold text-[#0F1F44] mb-3 md:mb-4 ">
+            QUINTECH
           </h3>
 
           <p className="text-[#555] text-sm sm:text-base leading-relaxed mb-3 md:mb-4">
@@ -120,19 +120,35 @@ const Business = () => {
             CINCOBIT TECHNOLOGY
           </h3>
           <p className="text-[#555] text-sm sm:text-base leading-relaxed mb-3 md:mb-4">
-            Empowering industries through tailored tech innovation. QCAS doesn't
-            just follow trends — it defines them.
+            Empowering Digital Resilience Cincobit is a dynamic technology
+            company delivering specialized IT consulting and digital
+            infrastructure solutions to support enterprise growth in an
+            increasingly connected world.m.
           </p>
           <p className="text-[#555] text-sm sm:text-base leading-relaxed mb-3 md:mb-4">
-            <strong>Core missions:</strong>
+            <strong>With core expertise in:</strong>
             <br />
-            2. Commercial Technology Transfer - Ensuring lab-based breakthroughs
-            transition smoothly into market-ready platforms.
+            1. Information Technology Consulting - End-to-end digital
+            transformation strategy, IT systems design, and enterprise
+            architecture.
+            <br />
+            2. Cybersecurity Consulting - Threat analysis, risk management, and
+            robust security frameworks to safeguard digital assets.
+            <br />
+            3. Internet Consultancy - Infrastructure planning, cloud
+            integration, and platform optimization for scalable web
+            environments.
+            <br />
+            4. Software Development (Software House) - Agile development of
+            custom applications, enterprise software, and innovative digital
+            tools.
           </p>
           <p className="text-[#555] text-sm sm:text-base leading-relaxed mb-4 md:mb-6">
-            QCAS extends its R&D strength into real-world impact, forming
-            partnerships with industry leaders and institutions. Our edge is in
-            execution — combining technical insight with commercial urgency.
+            Cincobit bridges strategic insight with technical precision -
+            ensuring secure, scalable, and future-ready digital ecosystems. As a
+            Pentacore subsidiary, it benefits from strong governance, financial
+            backing, and strategic direction to drive innovation and regional
+            impact.
           </p>
 
           <button className="relative inline-flex items-center bg-[#0F1F44] text-white rounded-full w-[150px] sm:w-[170px] pl-4 pr-10 sm:pr-12 py-2 sm:py-3 hover:bg-[#0c1938] transition-colors duration-200">
@@ -179,7 +195,7 @@ const Business = () => {
         {/* Right Content Section */}
         <div className="w-full lg:flex-1 lg:min-w-[300px] px-4 md:px-6 lg:pl-8 lg:pr-0 pt-6 md:pt-8 lg:pt-0 flex flex-col justify-center">
           <h3 className="text-2xl sm:text-3xl md:text-[34px] font-bold text-[#0F1F44] mb-3 md:mb-4">
-            Venta DISTRIBUTION
+            VENTA DISTRIBUTION
           </h3>
           <p className="text-[#555] text-sm sm:text-base leading-relaxed mb-3 md:mb-4">
             Enabling Sustainable Trade Across Food, Packaging & Recycling
