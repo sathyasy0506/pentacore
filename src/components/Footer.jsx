@@ -68,33 +68,32 @@ const Footer = () => {
           </div>
 
           {/* Middle Column */}
-          <div>
-            <h3 className="text-[14px] font-medium leading-[20px] pb-4">
-              Business Sectors
-            </h3>
-            <div className="space-y-4">
-              {["Cincobit Technology", "Venta Distribution", "Qiuntech"].map(
-                (sector) => (
-                  <div key={sector} className="flex items-center space-x-2">
-                    <svg
-                      className="w-4 h-4 text-[#D6BA73]"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M7.293 14.707a1 1 0..."
-                      />
-                    </svg>
-                    <span className="text-[16px] text-white/85 hover:text-white cursor-pointer transition">
-                      {sector}
-                    </span>
-                  </div>
-                )
-              )}
-            </div>
-          </div>
+         <div>
+  <h3 className="text-[14px] font-medium leading-[20px] pb-4">
+    Business Sectors
+  </h3>
+  <div className="space-y-4">
+    {["Cincobit Technology", "Venta Distribution", "Qiuntech"].map((sector) => (
+      <div key={sector} className="flex items-center space-x-2">
+        <svg
+          className="w-4 h-4 text-[#D6BA73] flex-shrink-0"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fillRule="evenodd"
+            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+            clipRule="evenodd"
+          />
+        </svg>
+        <span className="text-[16px] text-white/85 hover:text-white cursor-pointer transition">
+          {sector}
+        </span>
+      </div>
+    ))}
+  </div>
+</div>
 
           {/* Right Column */}
           <div>
