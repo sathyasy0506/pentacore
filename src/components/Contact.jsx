@@ -16,17 +16,44 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission here
+
+    const payload = {
+      access_key: "REPLACE_WITH_YOUR_ACCESS_KEY",
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      message: formData.message,
+    };
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await res.json();
+      if (result.success) {
+        alert("Thank you! Your message has been sent.");
+        setFormData({ name: "", phone: "", email: "", message: "" });
+      } else {
+        alert("Oops! Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("There was a problem submitting your form.");
+    }
   };
 
   return (
     <div className="min-h-screen ">
       {/* Header Section */}
       <div className="text-center pt-20 pb-12">
-       <div className="inline-block border border-[#D6BA73] text-[#D6BA73] bg-[#F9F3E3] rounded-full px-4 py-1 text-sm font-semibold mb-2">
+        <div className="inline-block border border-[#D6BA73] text-[#D6BA73] bg-[#F9F3E3] rounded-full px-4 py-1 text-sm font-semibold mb-2">
           CONTACT US
         </div>
         <h1 className="text-4xl md:text-5xl font-bold text-[#0F1F44] mb-8">
@@ -93,7 +120,10 @@ const Contact = () => {
                     Email Address
                   </h3>
                   <p className="text-gray-600">
-                    <a href="mailto:info@pentacore.ae" className="hover:underline">
+                    <a
+                      href="mailto:info@pentacore.ae"
+                      className="hover:underline"
+                    >
                       info@pentacore.ae
                     </a>
                   </p>
