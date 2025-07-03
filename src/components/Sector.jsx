@@ -155,7 +155,7 @@ export default function RotatedCards() {
 
               {/* Visit Site Button */}
               <button
-                className="absolute bottom-4 left-4 bg-white bg-opacity-80 hover:bg-amber-400 hover:text-black rounded-full px-4 py-2 transition-all duration-2000 ease-in-out"
+                className="absolute bottom-4 left-4 bg-white bg-opacity-80 hover:bg-[#be9f30] hover:text-black rounded-full px-8 py-2 transition-all duration-2000 ease-in-out"
                 style={{
                   fontFamily: "'Monestrate', sans-serif",
                   fontSize: "18px",
