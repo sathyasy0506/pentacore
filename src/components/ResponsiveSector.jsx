@@ -8,7 +8,7 @@ import robo from "../assets/robo.jpg";
 const cardData = [
   {
     id: 1,
-    title: ["FINTECH"],
+    title: ["QUINTECH"],
     image: l6,
   },
   {
@@ -23,7 +23,7 @@ const cardData = [
   },
   {
     id: 4,
-    title: ["OTHERGIC", "STRATEGIC", "INVESTMENTS"],
+    title: ["OTHER", "STRATEGIC", "INVESTMENTS"],
     image: robo,
   },
 ];
