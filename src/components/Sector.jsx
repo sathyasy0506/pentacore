@@ -23,7 +23,7 @@ const cardsData = [
   },
   {
     id: "card4",
-    title: ["OTHERGIC", "STRATEGIC", "INVESTMENTS"],
+    title: ["OTHER", "STRATEGIC", "INVESTMENTS"],
     image: l8,
   },
 ];
