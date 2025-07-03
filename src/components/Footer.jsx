@@ -68,7 +68,7 @@ const Footer = () => {
           </div>
 
           {/* Middle Column */}
-         <div>
+        <div>
   <h3 className="text-[14px] font-medium leading-[20px] pb-4">
     Business Sectors
   </h3>
@@ -76,7 +76,7 @@ const Footer = () => {
     {["Cincobit Technology", "Venta Distribution", "Qiuntech"].map((sector) => (
       <div key={sector} className="flex items-center space-x-2">
         <svg
-          className="w-4 h-4 text-[#D6BA73] flex-shrink-0"
+          className="w-4 h-4 text-white flex-shrink-0"
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
