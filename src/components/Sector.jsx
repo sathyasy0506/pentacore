@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const cardsData = [
   {
     id: "card1",
-    title: ["FINTECH"],
+    title: ["QUINTECH"],
     image: robo,
   },
   {
