@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-
 import instagram from "../assets/instagram.png";
 import facebook from "../assets/facebook.png";
 import youtube from "../assets/youtube.png";
 import linkedin from "../assets/linkedin.png";
-// import instagram from "../assets/instagram.png";
+import ThankYouModal from "./ThankYouModal"; // Import the modal
 
 const Footer = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +12,8 @@ const Footer = () => {
     email: "",
     message: "",
   });
+
+  const [showModal, setShowModal] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -24,8 +25,9 @@ const Footer = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Footer form submitted:", formData);
-    // Handle form submission here
+    setShowModal(true);
+    // Form is submitted via hidden iframe
+    e.target.submit();
   };
 
   const sectors = {
@@ -41,9 +43,7 @@ const Footer = () => {
         <div className="grid gap-10 md:gap-12 md:grid-cols-2 lg:grid-cols-3">
           {/* Left Column */}
           <div className="space-y-8">
-            {/* Phone */}
             <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 mt-1">{/* phone icon */}</div>
               <a
                 href="tel:+971048245784"
                 className="text-[16px] font-light leading-[27px]"
@@ -51,10 +51,7 @@ const Footer = () => {
                 +971 (0) 4 824 5784
               </a>
             </div>
-
-            {/* Email */}
             <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 mt-1">{/* email icon */}</div>
               <a
                 href="mailto:info@pentacore.ae"
                 className="text-[16px] font-light leading-[27px]"
@@ -62,16 +59,13 @@ const Footer = () => {
                 info@pentacore.ae
               </a>
             </div>
-
-            {/* Address */}
             <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 mt-1">{/* location icon */}</div>
               <div>
                 <p className="text-[16px] font-light leading-[27px]">
                   Office No. 2207, Emirates Financial Towers
                 </p>
                 <p className="text-[16px] font-light leading-[27px]">
-                  DIFC, Dubai, UAE, +971 (0) 4 824 5784
+                  DIFC, Dubai, UAE
                 </p>
                 <p className="text-[16px] font-light leading-[27px]">
                   www.pentacore.ae
@@ -92,7 +86,6 @@ const Footer = () => {
                     className="w-4 h-4 text-white flex-shrink-0"
                     fill="currentColor"
                     viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
                       fillRule="evenodd"
@@ -113,12 +106,22 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Right Column */}
+          {/* Right Column - Contact Form */}
           <div>
             <h3 className="text-[14px] font-medium leading-[20px] pb-4">
               Contact Us
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form
+              action="https://submit-form.com/h1ebpcnvC"
+              method="POST"
+              target="hidden_iframe_footer"
+              onSubmit={handleSubmit}
+              className="space-y-4"
+            >
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="text" name="_honeypot" style={{ display: "none" }} />
+
               <input
                 type="text"
                 name="name"
@@ -182,10 +185,15 @@ const Footer = () => {
                 Submit
               </button>
             </form>
+
+            <iframe
+              name="hidden_iframe_footer"
+              style={{ display: "none" }}
+            ></iframe>
           </div>
         </div>
 
-        {/* Bottom Section */}
+        {/* Bottom Footer */}
         <div className="mt-12 pt-8 border-t border-gray-600 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-300 text-sm text-center">© 2025 PENTACORE</p>
           <div className="flex space-x-3">
@@ -201,6 +209,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* Thank You Modal */}
+      <ThankYouModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </footer>
   );
 };
