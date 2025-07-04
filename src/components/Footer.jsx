@@ -28,6 +28,13 @@ const Footer = () => {
     // Handle form submission here
   };
 
+  const sectors = {
+    "Cincobit Technology": "https://cincobit.com",
+    "Venta Distribution": "https://ventauae.com",
+    "QuinTech Centre for Applied Sciences Global (QCAS Global) Limited":
+      "https://qcas.global",
+  };
+
   return (
     <footer className="bg-[#0F1F44] text-white m-4 sm:m-8 md:m-12 py-10 sm:py-12 px-6 sm:px-10 md:px-14 rounded-t-3xl rounded-b-3xl">
       <div className="max-w-7xl mx-auto">
@@ -37,17 +44,23 @@ const Footer = () => {
             {/* Phone */}
             <div className="flex items-start space-x-4">
               <div className="flex-shrink-0 mt-1">{/* phone icon */}</div>
-              <p className="text-[16px] font-light leading-[27px]">
+              <a
+                href="tel:+971048245784"
+                className="text-[16px] font-light leading-[27px]"
+              >
                 +971 (0) 4 824 5784
-              </p>
+              </a>
             </div>
 
             {/* Email */}
             <div className="flex items-start space-x-4">
               <div className="flex-shrink-0 mt-1">{/* email icon */}</div>
-              <p className="text-[16px] font-light leading-[27px]">
+              <a
+                href="mailto:info@pentacore.ae"
+                className="text-[16px] font-light leading-[27px]"
+              >
                 info@pentacore.ae
-              </p>
+              </a>
             </div>
 
             {/* Address */}
@@ -68,32 +81,37 @@ const Footer = () => {
           </div>
 
           {/* Middle Column */}
-        <div>
-  <h3 className="text-[14px] font-medium leading-[20px] pb-4">
-    Business Sectors
-  </h3>
-  <div className="space-y-4">
-    {["Cincobit Technology", "Venta Distribution", "Qiuntech"].map((sector) => (
-      <div key={sector} className="flex items-center space-x-2">
-        <svg
-          className="w-4 h-4 text-white flex-shrink-0"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fillRule="evenodd"
-            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-            clipRule="evenodd"
-          />
-        </svg>
-        <span className="text-[16px] text-white/85 hover:text-white cursor-pointer transition">
-          {sector}
-        </span>
-      </div>
-    ))}
-  </div>
-</div>
+          <div>
+            <h3 className="text-[14px] font-medium leading-[20px] pb-4">
+              Business Sectors
+            </h3>
+            <div className="space-y-4">
+              {Object.entries(sectors).map(([sector, url]) => (
+                <div key={sector} className="flex items-center space-x-2">
+                  <svg
+                    className="w-4 h-4 text-white flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[16px] text-white/85 hover:text-white cursor-pointer transition"
+                  >
+                    {sector}
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
 
           {/* Right Column */}
           <div>
