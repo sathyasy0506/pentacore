@@ -31,7 +31,8 @@ const Footer = () => {
   const sectors = {
     "Cincobit Technology": "https://cincobit.com",
     "Venta Distribution": "https://ventauae.com",
-    Quintech: "https://qcas.global",
+    "QuinTech Centre for Applied Sciences Global (QCAS Global) Limited":
+      "https://qcas.global",
   };
 
   return (
@@ -43,17 +44,23 @@ const Footer = () => {
             {/* Phone */}
             <div className="flex items-start space-x-4">
               <div className="flex-shrink-0 mt-1">{/* phone icon */}</div>
-              <p className="text-[16px] font-light leading-[27px]">
+              <a
+                href="tel:+971048245784"
+                className="text-[16px] font-light leading-[27px]"
+              >
                 +971 (0) 4 824 5784
-              </p>
+              </a>
             </div>
 
             {/* Email */}
             <div className="flex items-start space-x-4">
               <div className="flex-shrink-0 mt-1">{/* email icon */}</div>
-              <p className="text-[16px] font-light leading-[27px]">
+              <a
+                href="mailto:info@pentacore.ae"
+                className="text-[16px] font-light leading-[27px]"
+              >
                 info@pentacore.ae
-              </p>
+              </a>
             </div>
 
             {/* Address */}
