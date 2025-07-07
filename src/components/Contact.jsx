@@ -20,7 +20,7 @@ const Contact = () => {
     e.preventDefault();
 
     const payload = {
-      access_key: "REPLACE_WITH_YOUR_ACCESS_KEY",
+      access_key: "056a4bc6-6e69-4f04-ba90-fe4e60fe6e1d",
       name: formData.name,
       phone: formData.phone,
       email: formData.email,
