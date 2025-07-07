@@ -23,11 +23,37 @@ const Footer = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setShowModal(true);
-    // Form is submitted via hidden iframe
-    e.target.submit();
+
+    const payload = {
+      access_key: "056a4bc6-6e69-4f04-ba90-fe4e60fe6e1d",
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      message: formData.message,
+    };
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await res.json();
+      if (result.success) {
+        setShowModal(true);
+        setFormData({ name: "", phone: "", email: "", message: "" });
+      } else {
+        alert("Oops! Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("There was a problem submitting your form.");
+    }
   };
 
   const sectors = {
@@ -111,17 +137,7 @@ const Footer = () => {
             <h3 className="text-[14px] font-medium leading-[20px] pb-4">
               Contact Us
             </h3>
-            <form
-              action="https://submit-form.com/h1ebpcnvC"
-              method="POST"
-              target="hidden_iframe_footer"
-              onSubmit={handleSubmit}
-              className="space-y-4"
-            >
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
-              <input type="text" name="_honeypot" style={{ display: "none" }} />
-
+            <form onSubmit={handleSubmit} className="space-y-4">
               <input
                 type="text"
                 name="name"
@@ -180,38 +196,17 @@ const Footer = () => {
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 focus:ring-2 focus:ring-blue-500"
+                className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition"
               >
                 Submit
               </button>
             </form>
-
-            <iframe
-              name="hidden_iframe_footer"
-              style={{ display: "none" }}
-            ></iframe>
-          </div>
-        </div>
-
-        {/* Bottom Footer */}
-        <div className="mt-12 pt-8 border-t border-gray-600 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-300 text-sm text-center">© 2025 PENTACORE</p>
-          <div className="flex space-x-3">
-            {[instagram, facebook, youtube, linkedin].map((icon, index) => (
-              <a
-                key={index}
-                href="#"
-                className="w-9 h-9 bg-white rounded-full flex items-center justify-center hover:bg-gray-500 transition"
-              >
-                <img src={icon} alt="social-icon" className="w-4 h-4" />
-              </a>
-            ))}
           </div>
         </div>
       </div>
 
-      {/* Thank You Modal */}
-      <ThankYouModal isOpen={showModal} onClose={() => setShowModal(false)} />
+      {/* Modal for Thank You */}
+      {showModal && <ThankYouModal onClose={() => setShowModal(false)} />}
     </footer>
   );
 };
