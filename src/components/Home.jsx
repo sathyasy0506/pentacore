@@ -36,7 +36,7 @@ const Home = () => {
         <div className="w-full px-4 sm:mx-10 md:mx-20 text-white">
           <div className="animate-fade-in-up">
             <h1 className="text-4xl sm:text-5xl md:text-[58px] font-semibold leading-[1.2] md:leading-[72px] text-white mb-6 animate-fade-in-up">
-              Strategic Investments. Sustainable
+              Value-driven Collaborations. Sustainable
               <br className="hidden sm:block" />
               Growth. Innovation-led Future.
             </h1>
@@ -71,7 +71,7 @@ const Home = () => {
             {/* Left Column - Text Content */}
             <div className="lg:col-span-3 space-y-6 md:space-y-8">
               <h2 className="text-2xl sm:text-3xl md:text-[36px] font-semibold leading-[1.3] md:leading-[55.44px] text-[rgb(12,12,60)]">
-                Pentacore Holdings is a DIFC-based investment holding company
+                Pentacore Holdings is a DIFC-based holding company
                 focused on building a diversified portfolio across
                 biotechnology, information technology, food & beverage, and
                 other high-growth sectors. We invest, manage, and scale
